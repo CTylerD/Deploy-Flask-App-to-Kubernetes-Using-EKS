@@ -5,10 +5,9 @@ COPY . /main
 WORKDIR /main
 
 RUN pip install --upgrade pip
-RUN pip install flask
-RUN pip install jwt
+RUN pip install -r requirements .txt
 
 EXPOSE 80:8080
 
 
-ENTRYPOINT ["python", "main.py"]
+ENTRYPOINT ["python", "-b", ":8080", "main.py"]
