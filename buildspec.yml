@@ -8,6 +8,8 @@ env:
 
 phases:
   install:
+    runtime-versions:
+        python: 3.7
     commands:
       - curl -sS -o aws-iam-authenticator https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/aws-iam-authenticator
       - curl -sS -o kubectl https://amazon-eks.s3-us-west-2.amazonaws.com/1.14.6/2019-08-22/bin/linux/amd64/kubectl
@@ -22,6 +24,8 @@ phases:
         - export KUBECONFIG=$HOME/.kube/config
   build:
     commands:
+      - systemctl enable docker
+      - systemctl start docker
       - docker build --tag $REPOSITORY_URI:$TAG .
 
   post_build:
