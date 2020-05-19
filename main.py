@@ -100,7 +100,7 @@ def decode_jwt():
     response = {'email': data['email'],
                 'exp': data['exp'],
                 'nbf': data['nbf'] }
-    return jsonify(**response)
+    return jsonify(response)
 
 
 def _get_jwt(user_data):
