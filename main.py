@@ -112,4 +112,3 @@ def _get_jwt(user_data):
 
 if __name__ == '__main__':
     APP.run(port=8080, debug=True)
-ff
