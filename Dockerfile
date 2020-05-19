@@ -8,4 +8,4 @@ RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 
-ENTRYPOINT ["python", "-b", ":8080", "main.py"]
+ENTRYPOINT ["python", "-b", "80:8080", "main.py"]
